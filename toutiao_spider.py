@@ -1,6 +1,6 @@
 import requests
 import json
-from openpyxl import Workbook
+# from openpyxl import Workbook
 import time
 import hashlib
 import os
@@ -64,26 +64,26 @@ def getdata(url, headers, cookies):  # 解析网页函数
     return data
 
 
-def savedata(title, s_url, source, media_url):  # 存储数据到文件
-    # 存储数据到xlxs文件
-    wb = Workbook()
-    if not os.path.isdir(os.getcwd() + '/result'):  # 判断文件夹是否存在
-        os.makedirs(os.getcwd() + '/result')  # 新建存储文件夹
-    filename = os.getcwd() + '/result/result-' + datetime.datetime.now().strftime(
-        '%Y-%m-%d-%H-%m') + '.xlsx'  # 新建存储结果的excel文件
-    ws = wb.active
-    ws.title = 'data'  # 更改工作表的标题
-    ws['A1'] = '标题'  # 对表格加入标题
-    ws['B1'] = '新闻链接'
-    ws['C1'] = '头条号'
-    ws['D1'] = '头条号链接'
-    for row in range(2, len(title) + 2):  # 将数据写入表格
-        _ = ws.cell(column=1, row=row, value=title[row - 2])
-        _ = ws.cell(column=2, row=row, value=s_url[row - 2])
-        _ = ws.cell(column=3, row=row, value=source[row - 2])
-        _ = ws.cell(column=4, row=row, value=media_url[source[row - 2]])
-
-    wb.save(filename=filename)  # 保存文件
+# def savedata(title, s_url, source, media_url):  # 存储数据到文件
+#     # 存储数据到xlxs文件
+#     wb = Workbook()
+#     if not os.path.isdir(os.getcwd() + '/result'):  # 判断文件夹是否存在
+#         os.makedirs(os.getcwd() + '/result')  # 新建存储文件夹
+#     filename = os.getcwd() + '/result/result-' + datetime.datetime.now().strftime(
+#         '%Y-%m-%d-%H-%m') + '.xlsx'  # 新建存储结果的excel文件
+#     ws = wb.active
+#     ws.title = 'data'  # 更改工作表的标题
+#     ws['A1'] = '标题'  # 对表格加入标题
+#     ws['B1'] = '新闻链接'
+#     ws['C1'] = '头条号'
+#     ws['D1'] = '头条号链接'
+#     for row in range(2, len(title) + 2):  # 将数据写入表格
+#         _ = ws.cell(column=1, row=row, value=title[row - 2])
+#         _ = ws.cell(column=2, row=row, value=s_url[row - 2])
+#         _ = ws.cell(column=3, row=row, value=source[row - 2])
+#         _ = ws.cell(column=4, row=row, value=media_url[source[row - 2]])
+#
+#     wb.save(filename=filename)  # 保存文件
 
 
 def data_main(max_behot_time, title, source_url, s_url, source, media_url):  # 主函数
