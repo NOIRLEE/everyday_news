@@ -7,9 +7,7 @@ def weather_main(add):
         index_url = 'http://www.webxml.com.cn/WebServices/WeatherWebService.asmx/getWeatherbyCityName?theCityName=%s'%add
         response1 = urlopen(index_url)  #发送请求
         xml_string = response1.read().decode()
-
         DOMTree = parseString(xml_string)
-
         collection = DOMTree.documentElement
 
         VariationChilds = collection.getElementsByTagName("string")
@@ -21,7 +19,7 @@ def weather_main(add):
         weather_conditions = VariationChilds[10].childNodes[0].nodeValue
         jz_Gls = VariationChilds[11].childNodes[0].nodeValue
         weather_str = '<p>位置：' + address +  '</p></n>' + '<p>时间：' + time +  '</p></n>' + '<p>温度：' + temperature +  '</p></n>'  + '<p>天气：' + weather +  '</p></n>' \
-        + '<p>风力：' + wind_power + '</p></n>'+ '<p>天气实况：' + weather_conditions +  '</p></n>' + '<p>' + jz_Gls +  '</p></n>'
+        + '<p>风力：' + wind_power + '</p></n>'+ '<p>' + weather_conditions +  '</p></n>' + '<p>' + jz_Gls +  '</p></n>'
         return weather_str
     except Exception as e:
         print(e)

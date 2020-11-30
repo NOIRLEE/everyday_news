@@ -3,7 +3,7 @@ from email.mime.text import MIMEText
 from email.utils import formataddr
 
 my_sender = '291630817@qq.com'  # 发件人邮箱账号
-my_pass = 'frhsgpmgrgcgbgee'  # 发件人邮箱密码
+my_pass = 'rlrqwtxousggbhef'  # 发件人邮箱密码
 my_user = '291630817@qq.com'  # 收件人邮箱账号，我这边发送给自己
 
 
@@ -19,7 +19,8 @@ def emil_mail(content,my_user):
         server.login(my_sender, my_pass)  # 括号中对应的是发件人邮箱账号、邮箱密码
         server.sendmail(my_sender, [my_user, ], msg.as_string())  # 括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件
         server.quit()  # 关闭连接
-    except Exception:  # 如果 try 中的语句没有执行，则会执行下面的 ret=False
+    except Exception as e:  # 如果 try 中的语句没有执行，则会执行下面的 ret=False
+        print(e)
         ret = False
     return ret
 

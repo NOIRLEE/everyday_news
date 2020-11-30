@@ -117,8 +117,7 @@ def data_main(max_behot_time, title, source_url, s_url, source, media_url):  # �
             print(len(title))  # 获取的新闻数量
 
 def main_(user):
-    data_main(max_behot_time, title, source_url, s_url, source, media_url)
-    #发送邮件
+    #处理数据发送邮件
     str = weather_main(user['add'])
     for i in range(len(title)):
         str1 = '<p><a href="'+ s_url[i] + '">' + title[i] + '</a></p>'
@@ -133,5 +132,16 @@ def main_(user):
 
 
 if __name__ == '__main__':
-    user = {'name':'李佳豪','add':'咸阳','email':'291630817@qq.com'}
-    main_(user)
+    data_main(max_behot_time, title, source_url, s_url, source, media_url)
+    user_list = [{'name':'self','add':'咸阳','email':'291630817@qq.com'},
+                 {'name': '门门', 'add': '深圳', 'email': '563654319@qq.com'},
+                 {'name': '星子哥', 'add': '武汉', 'email': '1158046454@qq.com'},
+                 {'name': '泡泡', 'add': '武汉', 'email': '59489240@qq.com'},
+                 {'name': '萝北', 'add': '兰州', 'email': '17789657220@163.com'},
+                 {'name': '大鸽', 'add': '烟台', 'email': '2375614275@qq.com'},
+                 {'name': '禾几', 'add': '青岛', 'email': '25172320@qq.com'},
+                 ]
+    for i in user_list:
+        main_(i)
+        time.sleep(1)
+        # print(i,type(i))
