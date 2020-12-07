@@ -119,10 +119,13 @@ def data_main(max_behot_time, title, source_url, s_url, source, media_url):  # �
 def main_(user):
     #处理数据发送邮件
     str = weather_main(user['add'])
-    for i in range(len(title)):
-        str1 = '<p><a href="'+ s_url[i] + '">' + title[i] + '</a></p>'
-        str = str + str1
-    print(str)
+    try:
+        for i in range(len(title)):
+            str1 = '<p><a href="'+ s_url[i] + '">' + title[i] + '</a></p>'
+            str = str + str1
+        print(str)
+    except Exception as e:
+        print(e)
 
     ret = emil_mail(str,user['email'],user['name'])
     if ret:
