@@ -1,3 +1,4 @@
+import random
 from urllib.request import urlopen
 from urllib.parse import urlencode,quote,unquote
 from xml.dom.minidom import parseString
@@ -18,7 +19,8 @@ def weather_main(add):
         wind_power = VariationChilds[7].childNodes[0].nodeValue
         weather_conditions = VariationChilds[10].childNodes[0].nodeValue
         jz_Gls = VariationChilds[11].childNodes[0].nodeValue
-        weather_str = '<p>位置：' + address +  '</p></n>' + '<p>时间：' + time +  '</p></n>' + '<p>温度：' + temperature +  '</p></n>'  + '<p>天气：' + weather +  '</p></n>' \
+        food_list = ['盖浇饭','麻辣牛肉面','兰州牛肉面','美丽的泡馍','馄饨小笼包','砂锅系列','豪华三合一油泼面系列','荞面饸饹/肉拌搓搓','擀面皮肉夹馍套餐','麻辣米线','香辣土豆片夹馍','养生粥系列','小火锅','麻辣烫','菜夹馍稀饭','西北风（谁抽到这个谁今天必倒霉）','重庆小面','沙县小吃','酸汤水饺/干蘸水饺','绵阳米粉','炸鸡汉堡/KFC/金拱门','烤面筋',]
+        weather_str = '<p>今天吃：' + food_list[random.randint(0,len(food_list))] +  '</p></n>' + '<p>位置：' + address +  '</p></n>' + '<p>时间：' + time +  '</p></n>' + '<p>温度：' + temperature +  '</p></n>'  + '<p>天气：' + weather +  '</p></n>' \
         + '<p>风力：' + wind_power + '</p></n>'+ '<p>' + weather_conditions +  '</p></n>' + '<p>' + jz_Gls +  '</p></n>'
         return weather_str
     except Exception as e:
@@ -27,6 +29,11 @@ def weather_main(add):
 
 
 if __name__ == '__main__':
-    print(weather_main('咸阳'))
+    food_list = ['盖浇饭', '麻辣牛肉面', '兰州牛肉面', '美丽的泡馍', '馄饨小笼包', '砂锅系列', '豪华三合一油泼面系列', '荞面饸饹/肉拌搓搓', '擀面皮肉夹馍套餐', '麻辣米线',
+                 '香辣土豆片夹馍', '养生粥系列', '小火锅', '麻辣烫', '菜夹馍稀饭', '西北风（谁抽到这个谁今天必倒霉）', '重庆小面', '沙县小吃', '酸汤水饺/干蘸水饺', '绵阳米粉',
+                 '炸鸡汉堡/KFC/金拱门', '烤面筋', ]
+    # print(weather_main('咸阳'))
+    a = food_list[random.randint(0, len(food_list))]
+    print(a)
 # for i in VariationChilds:
 #     print(i.childNodes[0].nodeValue)
