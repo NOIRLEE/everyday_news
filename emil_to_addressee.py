@@ -7,12 +7,12 @@ my_pass = 'EUQMKJLNJCDBCAQE'  # 发件人邮箱密码
 my_user = '291630817@qq.com'  # 收件人邮箱账号，我这边发送给自己
 
 
-def emil_mail(content,my_user):
+def emil_mail(content,my_user,user):
     ret = True
     try:
         msg = MIMEText(content, 'html', 'utf-8')
         msg['From'] = formataddr(["老冰日报", my_sender])  # 括号里的对应发件人邮箱昵称、发件人邮箱账号
-        msg['To'] = formataddr(["USER", my_user])  # 括号里的对应收件人邮箱昵称、收件人邮箱账号
+        msg['To'] = formataddr([user, my_user])  # 括号里的对应收件人邮箱昵称、收件人邮箱账号
         msg['Subject'] = "今日头条新闻"  # 邮件的主题，也可以说是标题
 
         server = smtplib.SMTP_SSL("smtp.163.com", 465)  # 发件人邮箱中的SMTP服务器，端口是25

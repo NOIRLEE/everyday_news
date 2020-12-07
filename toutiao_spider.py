@@ -93,7 +93,7 @@ def data_main(max_behot_time, title, source_url, s_url, source, media_url):  # �
             start_url + max_behot_time + '&max_behot_time_tmp=' + max_behot_time + '&tadrequire=true&as=' + ascp[
                 'as'] + '&cp=' + ascp['cp'], headers, cookies)
         print(demo)
-        # time.sleep(1)
+        time.sleep(1)
         for j in range(len(demo['data'])):
             # print(demo['data'][j]['title'])
             if demo['data'][j]['title'] not in title:
@@ -122,8 +122,9 @@ def main_(user):
     for i in range(len(title)):
         str1 = '<p><a href="'+ s_url[i] + '">' + title[i] + '</a></p>'
         str = str + str1
+    print(str)
 
-    ret = emil_mail(str,user['email'])
+    ret = emil_mail(str,user['email'],user['name'])
     if ret:
         print('发送成功')
     else:
