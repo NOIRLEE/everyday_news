@@ -20,7 +20,9 @@ def weather_main(add):
         weather_conditions = VariationChilds[10].childNodes[0].nodeValue
         jz_Gls = VariationChilds[11].childNodes[0].nodeValue
         food_list = ['盖浇饭','麻辣牛肉面','兰州牛肉面','美丽的泡馍','馄饨小笼包','砂锅系列','豪华三合一油泼面系列','荞面饸饹/肉拌搓搓','擀面皮肉夹馍套餐','麻辣米线','香辣土豆片夹馍','养生粥系列','小火锅','麻辣烫','菜夹馍稀饭','西北风（谁抽到这个谁今天必倒霉）','重庆小面','沙县小吃','酸汤水饺/干蘸水饺','绵阳米粉','炸鸡汉堡/KFC/金拱门','烤面筋',]
-        weather_str = '<p>今天吃：' + food_list[random.randint(0,len(food_list))] +  '</p></n>' + '<p>位置：' + address +  '</p></n>' + '<p>时间：' + time +  '</p></n>' + '<p>温度：' + temperature +  '</p></n>'  + '<p>天气：' + weather +  '</p></n>' \
+        ssr = ['一般','高级','稀有','神器','史诗','传说','神话','通天灵宝','创世之神']
+        ssr_color = {'一般':'white','高级':'blue','稀有':'purple','神器':'DeepPink','史诗':'gold','传说':'tomato','神话':'brown','通天灵宝':'maroon','创世之神':'red',}
+        weather_str = '<p style="color:' + ssr_color[ssr[random.randint(0,len(ssr))]] +'">今天吃：' + ssr[random.randint(0,len(ssr))] + '-->' + food_list[random.randint(0,len(food_list))] +  '</p></n>' + '<p>位置：' + address +  '</p></n>' + '<p>时间：' + time +  '</p></n>' + '<p>温度：' + temperature +  '</p></n>'  + '<p>天气：' + weather +  '</p></n>' \
         + '<p>风力：' + wind_power + '</p></n>'+ '<p>' + weather_conditions +  '</p></n>' + '<p>' + jz_Gls +  '</p></n>'
         return weather_str
     except Exception as e:
@@ -29,11 +31,11 @@ def weather_main(add):
 
 
 if __name__ == '__main__':
-    food_list = ['盖浇饭', '麻辣牛肉面', '兰州牛肉面', '美丽的泡馍', '馄饨小笼包', '砂锅系列', '豪华三合一油泼面系列', '荞面饸饹/肉拌搓搓', '擀面皮肉夹馍套餐', '麻辣米线',
-                 '香辣土豆片夹馍', '养生粥系列', '小火锅', '麻辣烫', '菜夹馍稀饭', '西北风（谁抽到这个谁今天必倒霉）', '重庆小面', '沙县小吃', '酸汤水饺/干蘸水饺', '绵阳米粉',
-                 '炸鸡汉堡/KFC/金拱门', '烤面筋', ]
-    # print(weather_main('咸阳'))
-    a = food_list[random.randint(0, len(food_list))]
-    print(a)
+    # food_list = ['盖浇饭', '麻辣牛肉面', '兰州牛肉面', '美丽的泡馍', '馄饨小笼包', '砂锅系列', '豪华三合一油泼面系列', '荞面饸饹/肉拌搓搓', '擀面皮肉夹馍套餐', '麻辣米线',
+    #              '香辣土豆片夹馍', '养生粥系列', '小火锅', '麻辣烫', '菜夹馍稀饭', '西北风（谁抽到这个谁今天必倒霉）', '重庆小面', '沙县小吃', '酸汤水饺/干蘸水饺', '绵阳米粉',
+    #              '炸鸡汉堡/KFC/金拱门', '烤面筋', ]
+    print(weather_main('咸阳'))
+    # a = food_list[random.randint(0, len(food_list))]
+    # print(a)
 # for i in VariationChilds:
 #     print(i.childNodes[0].nodeValue)
