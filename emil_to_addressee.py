@@ -14,7 +14,7 @@ def emil_mail(content,my_user,user):
     ret = True
     try:
         msg = MIMEText(content, 'html', 'utf-8')
-        msg['From'] = formataddr(["老冰日报", my_sender])  # 括号里的对应发件人邮箱昵称、发件人邮箱账号
+        msg['From'] = formataddr(["西西瓜瓜日报", my_sender])  # 括号里的对应发件人邮箱昵称、发件人邮箱账号
         msg['To'] = formataddr([user, my_user])  # 括号里的对应收件人邮箱昵称、收件人邮箱账号
         msg['Subject'] = "今天吃啥啊？+今天你不知道的事！"  # 邮件的主题，也可以说是标题
 

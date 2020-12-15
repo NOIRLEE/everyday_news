@@ -123,7 +123,6 @@ def main_(user):
         for i in range(len(title)):
             str1 = '<p><a href="'+ s_url[i] + '">' + title[i] + '</a></p>'
             str = str + str1
-        print(str)
     except Exception as e:
         print(e)
 
@@ -137,7 +136,8 @@ def main_(user):
 
 if __name__ == '__main__':
     data_main(max_behot_time, title, source_url, s_url, source, media_url)
-    user_list = [{'name':'self','add':'咸阳','email':'anoirz@outlook.com'},
+    user_list = [
+                {'name':'self','add':'咸阳','email':'anoirz@outlook.com'},
                  {'name': '门门', 'add': '广州', 'email': '563654319@qq.com'},
                  {'name': '星子哥', 'add': '武汉', 'email': '1158046454@qq.com'},
                  {'name': '泡泡', 'add': '武汉', 'email': '59489240@qq.com'},
