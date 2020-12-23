@@ -135,7 +135,7 @@ def main_(user):
 
 
 if __name__ == '__main__':
-    data_main(max_behot_time, title, source_url, s_url, source, media_url)
+    # data_main(max_behot_time, title, source_url, s_url, source, media_url)
     user_list = [
                 {'name':'self','add':'咸阳','email':'anoirz@outlook.com'},
                  {'name': '门门', 'add': '广州', 'email': '563654319@qq.com'},
