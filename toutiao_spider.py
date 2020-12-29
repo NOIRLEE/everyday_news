@@ -146,6 +146,7 @@ if __name__ == '__main__':
                  {'name': '禾几', 'add': '青岛', 'email': 'swbbwin@qq.com'},
                  {'name':'self','add':'咸阳','email':'291630817@qq.com'},
                  {'name': 'dio', 'add': '上海', 'email': '1962268498@qq.com'},
+                 {'name': '党悦晨', 'add': '西安', 'email': '1040658446@qq.com'},
                  ]
     for i in user_list:
         main_(i)
